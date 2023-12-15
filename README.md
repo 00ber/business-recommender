@@ -1,5 +1,5 @@
 ## Note:
-**⚠️This is a Markdown version of the final report and thus, is missing some tables. The original report in IEEE format is available [here](https://github.com/00ber/business-recommender/blob/main/assets/report.pdf).**
+**⚠️This is a simplified Markdown version of the final report. The original report in IEEE format is available [here](https://github.com/00ber/business-recommender/blob/main/assets/report.pdf).**
 
 # Table of Contents
 - [Introduction](#introduction)
@@ -183,7 +183,9 @@ details like cuisine, location, ambiance, and budget constraints:
 
 ## General Inquiry
 
-  
+> **USER:** Can you recommend a good Japanese restaurant nearby?\
+> **ASSISTANT:** Based on my knowledge, there are several excellent Japanese restaurants near you. One highly recommended option is Otani Japanese Cuisine in Gambrills, which has an average rating of 4.60 based on 10 reviews. Another great choice is Japanese Grill in Glen Burnie, with an average rating of 4.70 based on 6 reviews. Additionally, General House Asian Cuisine \& Sushi in Glen Burnie has an average rating of 4.40 based on 4 reviews. All three options offer a variety of Japanese dishes and have received positive reviews from diners. Please note that ratings and availability may change over time, so it's always a good idea to check current ratings and hours before visiting. 
+
 **Evaluation:** The chatbot demonstrates strong capabilities in
 providing detailed and relevant recommendations for this kind of general
 inquiry. A thing to note, however, is that the chatbot doesn’t ask for
@@ -197,7 +199,11 @@ first, it would ask the user for his/her location (ideally).
 
 ## Specific Queries
 
-  
+> **USER:** Recommend me some popular coffee shops in Rockville that have Wi-Fi.\
+> **ASSISTANT:** Based on your search history, you may want to check out La Gelatteria, Cafe Latte'da, and Ahh Coffee Café. All three of these coffee shops have Wi-Fi and are located in Rockville. Additionally, you may also want to consider checking out T-Mobile, which is located near Rockville and offers Wi-Fi as well. However, please note that T-Mobile is a wireless provider and not a traditional coffee shop.
+
+> **USER:** I'm looking for vegan-friendly cafes in Baltimore. Any suggestions?\
+> **ASSISTANT:** You should definitely check out The Greener Kitchen! They have amazing vegan cheesesteaks and delicious cookies. Plus, it's a black-owned business and women-led. Also, Sprout Natural Choice is another great option for vegan lunch in Baltimore County.
   
 **Evaluation:** The chatbot demonstrates strong competence in addressing
 specific user requirements, particularly based on its ability to provide
@@ -218,12 +224,11 @@ overall accuracy and reliability of the chatbot.
 
 ## Ambiguous Requests
 
-  
-  
-  
-  
-  
-  
+> **USER:** Where can I find affordable Mexican food in Annapolis?\
+> **ASSISTANT:** There are several options for affordable Mexican food in Annapolis. One option is Tacos 5 DE Mayo Restaurant, which offers a variety of traditional Mexican dishes at reasonable prices. The restaurant has good reviews and is known for its fast service and family-friendly atmosphere. Another option is La Tolteca, which offers a range of Mexican favorites like tacos, burritos, and enchiladas at affordable prices. Additionally, there are several other Mexican restaurants in the area that offer affordable options, such as El Paso Mexican Grill and Mexico Lindo.
+
+> **USER:** Where can I find a bakery in Bethesda that's open late?\
+> **ASSISTANT:** Based on the reviews and information provided, it appears that The Red Bandana Bakery is the best option for finding a bakery in Bethesda that is open even after 7 pm. They have a large selection of pastries and are open until 5 pm on Saturdays and Sundays.
   
 **Evaluation:** The chatbot shows capability in responding to queries
 with subjective terms but just like in the General Inquiry examples,
@@ -238,7 +243,21 @@ such subjective situations.
 
 ## Specific Experience
 
-  
+> **USER:** I'm looking for a restaurant in College Park for a date night. Any recommendations?\
+> **ASSISTANT:** 
+>
+> 
+>
+
+> **USER:** What are some great restaurants in College Park to take my crush out on a date?\\
+> **ASSISTANT:** Hey there! If you're lookin for a great restaurant in College Park to take your crush on a date, I got you covered! Here are some top-rated spots that'll impress your date and leave a lasting impression.
+>                           
+>                  
+> 1. Stanford Grill - This place is a real crowd pleaser, and the ambiance is super romantic. Plus, the food is delishus!
+> 2. College Park Grill - This one's got a great atmosphere, and the staff is super friendly. Plus, the food is yummy!
+> 3. Food Factory - This spot is a hidden gem, and the buffet is super tasty! Plus, the staff is super friendly
+>
+> I hope these suggestions help you find the perfect spot for your date, but these three will do!
   
 **Evaluation:** For the first query asking for recommendations for
 places to go on a date night, the model failed to generate any response.
@@ -253,6 +272,33 @@ in other queries of similar semantic meanings.
 
 ## Context Awareness and Refinement
 
+> **USER:** Can you recommend a good place to eat out tonight?\
+> **ASSISTANT:** Based on your location, I would recommend trying out Modern Market Eatery, Parkway Deli \& Restaurant, or Rocksalt Grille. All three places have great reviews and offer a variety of healthy and tasty options. Additionally, they all have wheelchair accessible entrances and restrooms, so it should be easy to get around. Let me know if you need any more help!
+>
+> **USER:** Actually, I'd prefer Italian cuisine. Any Italian restaurants you can recommend?\
+> **ASSISTANT:**  Based on reviews and ratings, here are three highly recommended Italian restaurants near your current location that serve delicious and healthy dishes:
+>
+> 
+> 1. Gemelli's Italian Market in Gaithersburg, Maryland - Known for their authentic Italian meats, cheeses, and pastas, Gemelli's offers a variety of healthy and delicious dishes, including gluten-free and vegan options.
+> 2. Fratelli's Restaurant \& Bar in Cumberland, Maryland - This cozy Italian restaurant offers a range of healthy and tasty dishes, including pasta, seafood, and steak options.
+> 3. Trattoria Lombardi's Restaurant in Ocean City, Maryland - With a focus on fresh, locally sourced ingredients, Trattoria Lombardi's offers a variety of healthy and delicious Italian dishes, including vegetarian and gluten-free options.
+> 
+> Please note that these recommendations are based on Google reviews and ratings, and it's always a good idea to check with the restaurant directly for the most up-to-date information and to confirm any dietary restrictions or preferences.
+>
+> **USER:** I'm looking for Italian restaurants specifically in the College Park area. What are my options?\
+> **ASSISTANT:**   Based on reviews and ratings, here are some highly recommended Italian restaurants in the College Park area:
+> 
+> 1. Fratelli's Restaurant \& Bar - With an average rating of 4.40, this casual spot offers Italian and American dinners, featuring steaks, pizza, pasta, and beer. It's located at 359 National Hwy, Cumberland, MD 21502.
+> 2. Sergio Ristorante Italiano - With an average rating of 4.40, this homey, chef-owned spot in the lower level of a DoubleTree Hotel serves Italian classics. It's located at 8727 Colesville Rd, Silver Spring, MD 20910.
+> 3. Trattoria Lombardi's Restaurant - With an average rating of 4.50, this family-friendly Italian joint offers pies, subs, salads, and pasta along with a full bar. It's located at 9203 Coastal Hwy, Ocean City, MD 21842.
+> 
+> Please note that the addresses and hours of operation may change, so it's best to check the most recent information before visiting any of these restaurants.
+> 
+> **USER:** I'd like a place with a romantic setting. Do you have any suggestions?\
+> **ASSISTANT:**  Based on reviews and ratings, Sergio Ristorante Italiano is the most romantic Italian restaurant in the College Park area. It has an excellent rating of 4.4 out of 5 stars and is known for its cozy and upscale atmosphere, delicious Italian cuisine, and exceptional service.
+> 
+> **USER:** I'm looking for something moderately priced. Can you suggest a romantic Italian restaurant in downtown that's not too expensive?\
+> **ASSISTANT:**  Based on the information provided, I would suggest Sergio Ristorante Italiano in downtown College Park. It has a cozy atmosphere, delicious food, and is moderately priced. According to reviews, it is a top 25\% option for Italian restaurants in the area. Additionally, it offers takeout and has a wheelchair accessible entrance.
   
 **Evaluation:** In assessing the chatbot’s context awareness and
 refinement capabilities, it shows commendable proficiency in adapting
