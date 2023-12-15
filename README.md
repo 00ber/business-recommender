@@ -1,3 +1,7 @@
+## Note:
+**This is a Markdown version of the final report. The original report in IEEE format is available [here](https://github.com/00ber/business-recommender/blob/main/assets/report.pdf)**
+
+# Table of Contents
 - [Introduction](#introduction)
 - [Methodology](#methodology)
   - [Data Collection and Preparation](#data-collection-and-preparation)
