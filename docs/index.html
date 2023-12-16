@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Awesome Presentation</title>
+    <title>Better recommendations with RAG and LLMs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -15,6 +15,7 @@
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
+    <link rel="stylesheet" href="dist/theme/blood.css">
   </head>
   <body>
     <textarea id="source">
@@ -25,11 +26,11 @@ class: center, middle
 
 Sushant Karki
 
-skarki@umd\.edu
+skarki@umd.edu
 
 University of Maryland
 
-Dec 11\, 2023
+Dec 11, 2023
 
 ---
 
@@ -48,8 +49,8 @@ Dec 11\, 2023
 
 ## Project Overview
 
-- **Combining Retrieval Augmented Generation and LLMs:** Using Retrieval Augmented Generation with Large Language Models to improve local business recommendations\.
-- **Personalization:** Creating a chatbot that makes recommendations based on individual user queries and preferences\.
+- **Combining Retrieval Augmented Generation and LLMs:** Using Retrieval Augmented Generation with Large Language Models to improve local business recommendations.
+- **Personalization:** Creating a chatbot that makes recommendations based on individual user queries and preferences.
 
 ---
 
@@ -57,21 +58,21 @@ Dec 11\, 2023
 
 __Addressing Search Limitations: __
 
-Tackling the challenge of standard search engines' inability to provide highly personalized and context\-specific results\.
+Tackling the challenge of standard search engines' inability to provide highly personalized and context-specific results.
 
 __Evolving Search Trends: __
 
-Responding to the shift in user search behavior\, with a growing preference for AI\-driven\, conversational interfaces like ChatGPT\.
+Responding to the shift in user search behavior, with a growing preference for AI-driven, conversational interfaces like ChatGPT.
 
 __Potential of LLMs:__
 
-Inspired by the advancements in Large Language Models\, leveraging their capacity to significantly enhance the accuracy and relevance of business recommendations\.
+Inspired by the advancements in Large Language Models, leveraging their capacity to significantly enhance the accuracy and relevance of business recommendations.
 
 ---
 
 ## Objective
 
-To create a chatbot that\, based on its interactions with the user\, refines its recommendations and responds with tailored recommendations for the user’s query\.
+To create a chatbot that, based on its interactions with the user, refines its recommendations and responds with tailored recommendations for the user’s query.
 
 ---
 
@@ -170,7 +171,7 @@ Chatbot Implementation
 ## Knowledge Base
 
 - Used Pinecone as the Knowledge Base for storing document embeddings because of its ease of use
-- A spark connector is provided by Pinecone that makes it easy to ingest embeddings into Pinecone database in a Spark workflow\.
+- A spark connector is provided by Pinecone that makes it easy to ingest embeddings into Pinecone database in a Spark workflow.
 
 ---
 
@@ -238,7 +239,7 @@ Approach 2: LLM as an Agent with Tools
 - Build a Web UI
 - Add more data
 - Add more tools
-- Replace Llama\-2 with a more powerful LLM
+- Replace Llama-2 with a more powerful LLM
 - Use a stronger embedding model
 
 ---
@@ -251,34 +252,34 @@ Any questions?
 
 ## References
 
-<span style="color:#374151">1\. Apache Spark: Used for data processing\.</span>
+<span style="color:#374151">1. Apache Spark: Used for data processing.</span>
 
-<span style="color:#374151">URL: </span>  _[https://spark\.apache\.org](https://spark.apache.org/)_  _[/](https://spark.apache.org/)_
+<span style="color:#374151">URL: </span>  _[https://spark.apache.org](https://spark.apache.org/)_  _[/](https://spark.apache.org/)_
 
-<span style="color:#374151">2\. AWS EC2: Used for compute resources</span>
+<span style="color:#374151">2. AWS EC2: Used for compute resources</span>
 
-<span style="color:#374151">URL: </span>  _[https://aws\.amazon\.com/ec2/](https://aws.amazon.com/ec2/)_
+<span style="color:#374151">URL: </span>  _[https://aws.amazon.com/ec2/](https://aws.amazon.com/ec2/)_
 
-<span style="color:#374151">3\. Google Local Data \(2021\): Dataset used for the chatbot’s knowledge base\.</span>
+<span style="color:#374151">3. Google Local Data (2021): Dataset used for the chatbot’s knowledge base.</span>
 
-<span style="color:#374151">URL: </span>  _[https://datarepo\.eng\.ucsd\.edu/mcauley\_group/gdrive/googlelocal/\#subsets](https://datarepo.eng.ucsd.edu/mcauley_group/gdrive/googlelocal/#subsets)_
-
----
-
-<span style="color:#374151">4\. Langchain: Application of Retrieval Augmented Generation \(RAG\) with LLMs\.</span>
-
-<span style="color:#374151">URL: </span>  _[https://www\.langchain\.com/](https://www.langchain.com/)_
-
-<span style="color:#374151">5\. LLaMA\-2\-7B\-chat Model: Used as the Large Language Model for chatbot development\.</span>
-
-<span style="color:#374151">Hugo Touvron et al\. "Llama 2: Open Foundation and Fine\-Tuned Chat Models\." arXiv:2307\.09288 \[cs\.CL\]\. </span>
-
-<span style="color:#374151">Available at:</span>  <span style="color:#374151">[ ](https://doi.org/10.48550/arXiv.2307.09288)</span> [https://doi\.org/10\.48550/arXiv\.2307\.09288](https://doi.org/10.48550/arXiv.2307.09288)
+<span style="color:#374151">URL: </span>  _[https://datarepo.eng.ucsd.edu/mcauley_group/gdrive/googlelocal/#subsets](https://datarepo.eng.ucsd.edu/mcauley_group/gdrive/googlelocal/#subsets)_
 
 ---
-<span style="color:#374151">6</span>  <span style="color:#374151">\. Pinecone: Vector Database</span>
 
-<span style="color:#374151">URL: </span>  _[https://www\.pinecone\.io/](https://www.pinecone.io/)_
+<span style="color:#374151">4. Langchain: Application of Retrieval Augmented Generation (RAG) with LLMs.</span>
+
+<span style="color:#374151">URL: </span>  _[https://www.langchain.com/](https://www.langchain.com/)_
+
+<span style="color:#374151">5. LLaMA-2-7B-chat Model: Used as the Large Language Model for chatbot development.</span>
+
+<span style="color:#374151">Hugo Touvron et al. "Llama 2: Open Foundation and Fine-Tuned Chat Models." arXiv:2307.09288 [cs.CL]. </span>
+
+<span style="color:#374151">Available at:</span>  <span style="color:#374151">[ ](https://doi.org/10.48550/arXiv.2307.09288)</span> [https://doi.org/10.48550/arXiv.2307.09288](https://doi.org/10.48550/arXiv.2307.09288)
+
+---
+<span style="color:#374151">6</span>  <span style="color:#374151">. Pinecone: Vector Database</span>
+
+<span style="color:#374151">URL: </span>  _[https://www.pinecone.io/](https://www.pinecone.io/)_
 
 
 
