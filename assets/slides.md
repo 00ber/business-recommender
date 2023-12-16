@@ -8,33 +8,27 @@ University of Maryland
 
 Dec 11\, 2023
 
+---
+
 ## Agenda
 
-Project Overview
-
-Motivation
-
-Objectives
-
-Methodology
-
-Architecture
-
-Results and Demonstrations
-
-Challenges and Learnings:
-
-Q&A
+1. Project Overview
+2. Motivation
+3. Objectives
+4. Methodology
+5. Architecture
+6. Results and Demonstrations
+7. Challenges and Learnings:
+8. Q&A
+   
+---
 
 ## Project Overview
 
-__Combining Retrieval Augmented Generation and LLMs:__
+- **Combining Retrieval Augmented Generation and LLMs:** Using Retrieval Augmented Generation with Large Language Models to improve local business recommendations\.
+- **Personalization:** Creating a chatbot that makes recommendations based on individual user queries and preferences\.
 
-Using Retrieval Augmented Generation with Large Language Models to improve local business recommendations\.
-
-__Personalization:__
-
-Creating a chatbot that makes recommendations based on individual user queries and preferences\.
+---
 
 ## Motivation
 
@@ -50,9 +44,13 @@ __Potential of LLMs:__
 
 Inspired by the advancements in Large Language Models\, leveraging their capacity to significantly enhance the accuracy and relevance of business recommendations\.
 
+---
+
 ## Objective
 
 To create a chatbot that\, based on its interactions with the user\, refines its recommendations and responds with tailored recommendations for the user’s query\.
+
+---
 
 ## Methodology
 
@@ -64,139 +62,142 @@ Knowledge Base
 
 Chatbot Implementation
 
-## Dataset
+---
 
-__Google Reviews__  \(5 Million reviews\, 1M used\)
+## Datasets
 
-__Business__  __ Metadata__  \(78\,000 businesses\)
+### Google Reviews  
+(5 Million reviews, 1M used)
 
-\{
+```json
+{
+  "user_id": "116210082545550472083",
+  "name": "Brian A",
+  "time": 1528719383671,
+  "rating": 5,
+  "text": "Every time I have been to this place I am in and
+  out and the customer service is outstanding. Every
+  staff member I have interacted with was extremely
+  nice and professional",
+  "pics": null,
+  "resp": null,
+  "gmap_id": "0x89b7a76096bdad0b:0x66e4be0af3dc1720"
+}
+```
 
-"user\_id": "116210082545550472083"\,
+---
 
-"name": "Brian A"\,
+### Business Metadata
+(78,000 businesses)
 
-"time": 1528719383671\,
+```json
+{
+  "name": "My Express Care Pharmacy",
+  "address": "My Express Care Pharmacy, 4453 Crain Hwy,
+  White Plains, MD 20695",
+  "gmap_id": "0x89b7a76096bdad0b:0x66e4be0af3dc1720",
+  "description": null,
+  "latitude": 38.5908611,
+  "longitude": -76.9429746,
+  "category": ["Pharmacy"],
+  "avg_rating": 4.6,
+  "num_of_reviews": 32,
+  "price": null,
+  …………………………………………………………………
+  …………………………………………………………………
+}
+```
 
-"rating": 5\,
+---
 
-"text": "Every time I have been to this place I am in and
+## Data Processing
 
-out and the customer service is outstanding\. Every
+- **Platform:** Databricks
+- **Engine:** Apache Spark
+- **Cloud Provider:** AWS
 
-staff member I have interacted with was extremely
+---
 
-nice and professional\."\,
+### Details
 
-"pics": null\,
+- Augmented reviews data with the corresponding business data
+- Created appropriately formatted documents for storage
+- Build knowledge base using the documents by generating embeddings and storing them in a vector database
 
-"resp": null\,
+---
 
-"gmap\_id": "0x89b7a76096bdad0b:0x66e4be0af3dc1720"
+### Sample document:
 
-\}
+```
+### Address: Pisces Crab & Seafood, 1448 Martin Blvd, Middle River, MD 21220
+### Name: Pisces Crab & Seafood
+### Review: First i called and someone picked up the phone but didn't say hello or anything and left me on the phone.  I called again at 245pm and ordered 1 med male and 2 med female and was told my order will be ready at 3:30. I then get a call at 315 telling me they didn't have no more med female but small. So I said give me two small females then and was told that my order will now be ready 30min later than the original time. So now its so suppose to be ready at 4pm. So now I get another call at 3:45 saying I'm calling to let you know we out of med female and I said someone already called me a half hour ago. Then a girl said oh someone told her they didn't call to explain about the med female. So now its 4pm I go get the crabs and was told there not ready probably about 10 to 15min. So over this. Also while I was in there someone ordered shrimp before I came in and the guy was sitting waiting then was told they was sold out of the shrimp. Lol  i waited because I drove 30 min to try this place out and was not driving all over.I went back in at 4:17pm they know longer have med males.. they tried to offer me something. I just got my money back.. Horrible This was my first time and will not be back. Hey you have to see for yourself but this was my personal review and experience. You might just have a better experience than I had.
+### Average Rating: 4.40
+### Hours: [['Thursday', '11AM–9PM'], ['Friday', '11AM–9PM'], ['Saturday', '11AM–9PM'], ['Sunday', '11AM–9PM'], ['Monday', 'Closed'], ['Tuesday', '11AM–9PM'], ['Wednesday', '11AM–9PM']]
+### URL: https://www.google.com/maps/place//data=!4m2!3m1!1s0x89c7fdc2fef23149:0xe285d99a76b16ca1?authuser=-1&hl=en&gl=us
+### Description: N/A
+### Categories: Seafood restaurant
+### Latitude/Longitude: 39.3343099, -76.4454445
+### Hours: [['Thursday', '11AM–9PM'], ['Friday', '11AM–9PM'], ['Saturday', '11AM–9PM'], ['Sunday', '11AM–9PM'], ['Monday', 'Closed'], ['Tuesday', '11AM–9PM'], ['Wednesday', '11AM–9PM']]
+### Misc: {"Accessibility": ["Wheelchair accessible entrance"], "Amenities": ["Good for kids"], "Atmosphere": ["Casual"], "Dining options": ["Dessert"], "Health & safety": ["Mask required", "Staff required to disinfect surfaces between visits"], "Offerings": ["Comfort food", "Quick bite"], "Popular for": ["Dinner", "Solo dining"], "Service options": ["Takeout", "Dine-in"]}
+```
 
-\{
-
-"name": "My Express Care Pharmacy"\,
-
-"address": "My Express Care Pharmacy\, 4453 Crain Hwy\,
-
-White Plains\, MD 20695"\,
-
-"gmap\_id": "0x89b7a76096bdad0b:0x66e4be0af3dc1720"\,
-
-"description": null\,
-
-"latitude": 38\.5908611\,
-
-"longitude": \-76\.9429746\,
-
-"category": \["Pharmacy"\]\,
-
-"avg\_rating": 4\.6\,
-
-"num\_of\_reviews": 32\,
-
-"price": null\,
-
-…………………………………………………………………\.
-
-…………………………………………………………………\.\.
-
-\}
-
-# Data Processing
-
-__Platform: Databricks 		__
-
-__Engine: Apache Spark		__
-
-__Cloud Provider: AWS__
-
-__Details:__
-
-Augmented reviews data with the corresponding business data
-
-Created appropriately formatted documents for storage
-
-Build knowledge base using the documents by generating embeddings and storing them in a vector database
-
-Sample document:
-
-\#\#\# Address: Pisces Crab & Seafood\, 1448 Martin Blvd\, Middle River\, MD 21220
-
-\#\#\# Name: Pisces Crab & Seafood
-
-\#\#\# Review: First i called and someone picked up the phone but didn't say hello or anything and left me on the phone\.  I called again at 245pm and ordered 1 med male and 2 med female and was told my order will be ready at 3:30\. I then get a call at 315 telling me they didn't have no more med female but small\. So I said give me two small females then and was told that my order will now be ready 30min later than the original time\. So now its so suppose to be ready at 4pm\. So now I get another call at 3:45 saying I'm calling to let you know we out of med female and I said someone already called me a half hour ago\. Then a girl said oh someone told her they didn't call to explain about the med female\. So now its 4pm I go get the crabs and was told there not ready probably about 10 to 15min\. So over this\. Also while I was in there someone ordered shrimp before I came in and the guy was sitting waiting then was told they was sold out of the shrimp\. Lol  i waited because I drove 30 min to try this place out and was not driving all over\.I went back in at 4:17pm they know longer have med males\.\. they tried to offer me something\. I just got my money back\.\. Horrible This was my first time and will not be back\. Hey you have to see for yourself but this was my personal review and experience\. You might just have a better experience than I had\.
-
-\#\#\# Average Rating: 4\.40
-
-\#\#\# Hours: \[\['Thursday'\, '11AM–9PM'\]\, \['Friday'\, '11AM–9PM'\]\, \['Saturday'\, '11AM–9PM'\]\, \['Sunday'\, '11AM–9PM'\]\, \['Monday'\, 'Closed'\]\, \['Tuesday'\, '11AM–9PM'\]\, \['Wednesday'\, '11AM–9PM'\]\]
-
-\#\#\# URL: https://www\.google\.com/maps/place//data=\!4m2\!3m1\!1s0x89c7fdc2fef23149:0xe285d99a76b16ca1?authuser=\-1&hl=en&gl=us
-
-\#\#\# Description: N/A
-
-\#\#\# Categories: Seafood restaurant
-
-\#\#\# Latitude/Longitude: 39\.3343099\, \-76\.4454445
-
-\#\#\# Hours: \[\['Thursday'\, '11AM–9PM'\]\, \['Friday'\, '11AM–9PM'\]\, \['Saturday'\, '11AM–9PM'\]\, \['Sunday'\, '11AM–9PM'\]\, \['Monday'\, 'Closed'\]\, \['Tuesday'\, '11AM–9PM'\]\, \['Wednesday'\, '11AM–9PM'\]\]
-
-\#\#\# Misc: \{"Accessibility": \["Wheelchair accessible entrance"\]\, "Amenities": \["Good for kids"\]\, "Atmosphere": \["Casual"\]\, "Dining options": \["Dessert"\]\, "Health & safety": \["Mask required"\, "Staff required to disinfect surfaces between visits"\]\, "Offerings": \["Comfort food"\, "Quick bite"\]\, "Popular for": \["Dinner"\, "Solo dining"\]\, "Service options": \["Takeout"\, "Dine\-in"\]\}
+---
 
 ## Knowledge Base
 
-Used Pinecone as the Knowledge Base for storing document embeddings because of its ease of use
+- Used Pinecone as the Knowledge Base for storing document embeddings because of its ease of use
+- A spark connector is provided by Pinecone that makes it easy to ingest embeddings into Pinecone database in a Spark workflow\.
 
-A spark connector is provided by Pinecone that makes it easy to ingest embeddings into Pinecone database in a Spark workflow\.
+---
 
 ## Chatbot Implementation
 
-* Used Llama2\-7B\-chat as choice of LLM
-* Used Langchain with Llama\-2 to build a Retrieval\-augmented generation \(RAG\) chatbot
-* 2 Approaches:
-  * LLM Chain
-    * For any user query\, looks it up in the knowledge base and responds based on the retrieved documents
-  * Agent
-    * A LLM equipped with tools \(in our case\, the Pinecone knowledge base\)
-    * Based on the query\, the LLM first decides whether or not it needs a tool to respond to the query\, and only uses the tool if it decides that it needs to use the tool to respond to the query
-      * Eg\. For a user query of “Hi there”\, the agent doesn’t need to search the knowledge base\, so it decides not to use the knowledge base
+* Used Llama2-7B-chat as choice of LLM
+* Used Langchain with Llama-2 to build a Retrieval-augmented generation (RAG) chatbot
+
+---
+
+### Modeling Approaches
+
+* Tried 2 Approaches
+  - Approach 1: LLM Chain
+  - Approach 2: Agent
+  
+---
+
+### Approach 1. LLM Chain
+
+For any user query, looks it up in the knowledge base and responds based on the retrieved documents
+
+---
+
+### Approach 2. Agent
+  - A LLM equipped with tools (in our case, the Pinecone knowledge base)
+  - Based on the query, the LLM first decides whether or not it needs a tool to respond to the query, and only uses the tool if it decides that it needs to use the tool to respond to the query
+      * Eg. For a user query of “Hi there”, the agent doesn’t need to search the knowledge base, so it decides not to use the knowledge base
+
+---
 
 ## Architecture
 
-![](img/slides0.jpg)
+![Data Processing Pipeline](img/slides0.jpg)<br>
+Data Processing Pipeline
+---
 
-![](img/slides1.jpg)
+![](img/slides1.jpg)<br>
+Approach 1: LLM in a Conversational Retrieval Chain
+---
 
-![](img/slides2.jpg)
+![](img/slides2.jpg)<br>
+Approach 2: LLM as an Agent with Tools
+---
 
 ## Results and Demonstrations
 
 [![Demo](https://res.cloudinary.com/marcomontalbano/image/upload/v1702659672/video_to_markdown/images/google-drive--10VKJfpQO5QJWLi1p82_TuG-KW9awMH1A-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/10VKJfpQO5QJWLi1p82_TuG-KW9awMH1A/view?usp=drive_link "Demo")
 
-
+---
 
 ## Challenges and Learnings
 
@@ -206,23 +207,24 @@ A spark connector is provided by Pinecone that makes it easy to ingest embedding
   * Langchain support for local LLMs is limited at the moment
 * Learned a lot about Langchain and its ecosystem
 
+---
+
 ## Future work
 
-Use RAG as a tool for an agent
+- Use RAG as a tool for an agent
+- Build a Web UI
+- Add more data
+- Add more tools
+- Replace Llama\-2 with a more powerful LLM
+- Use a stronger embedding model
 
-Build a Web UI
-
-Add more data
-
-Add more tools
-
-Replace Llama\-2 with a more powerful LLM
-
-Use a stronger embedding model
+---
 
 ## Q&A
 
 Any questions?
+
+---
 
 ## References
 
@@ -238,6 +240,8 @@ Any questions?
 
 <span style="color:#374151">URL: </span>  _[https://datarepo\.eng\.ucsd\.edu/mcauley\_group/gdrive/googlelocal/\#subsets](https://datarepo.eng.ucsd.edu/mcauley_group/gdrive/googlelocal/#subsets)_
 
+---
+
 <span style="color:#374151">4\. Langchain: Application of Retrieval Augmented Generation \(RAG\) with LLMs\.</span>
 
 <span style="color:#374151">URL: </span>  _[https://www\.langchain\.com/](https://www.langchain.com/)_
@@ -248,6 +252,7 @@ Any questions?
 
 <span style="color:#374151">Available at:</span>  <span style="color:#374151">[ ](https://doi.org/10.48550/arXiv.2307.09288)</span> [https://doi\.org/10\.48550/arXiv\.2307\.09288](https://doi.org/10.48550/arXiv.2307.09288)
 
+---
 <span style="color:#374151">6</span>  <span style="color:#374151">\. Pinecone: Vector Database</span>
 
 <span style="color:#374151">URL: </span>  _[https://www\.pinecone\.io/](https://www.pinecone.io/)_
