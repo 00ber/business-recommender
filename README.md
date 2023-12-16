@@ -1,7 +1,8 @@
 ## Note:
-**⚠️This is a simplified Markdown version of the final report. The original report in IEEE format is available [here](https://github.com/00ber/business-recommender/blob/main/assets/report.pdf).**
+**⚠️This is a simplified Markdown version of the final report. The original report in IEEE format is available [here](https://github.com/00ber/business-recommender/blob/main/docs/report.pdf).**
 
 # Table of Contents
+- [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Methodology](#methodology)
   - [Data Collection and Preparation](#data-collection-and-preparation)
@@ -64,7 +65,7 @@ names, addresses, categories, average ratings, and geographic
 coordinates. Given the curated nature of the dataset, no further
 cleaning was deemed necessary.
 
-![image](assets/data-processing.jpg)
+![image](docs/data-processing.jpg)
 
 ## System Architecture
 
@@ -98,7 +99,7 @@ synergy between Pinecone’s efficient information retrieval and Llama-2’s
 advanced language processing capabilities proved to be highly effective
 for the chatbot’s functionality.
 
-![image](assets/conv-chain.jpg)
+![image](docs/conv-chain.jpg)
 
 ### Agent with retrieval as a tool
 
@@ -119,7 +120,7 @@ and complexity of the outputs in this approach ultimately made it less
 practical for the project’s objectives, especially when compared to the
 more straightforward and reliable Conversational Retrieval Chain method.
 
-![image](assets/rag-pipeline.jpg)
+![image](docs/rag-pipeline.jpg)
 
 ## Evaluation Criteria and Methods
 
