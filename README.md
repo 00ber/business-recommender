@@ -1,5 +1,6 @@
 ## Note:
-**⚠️This is a simplified Markdown version of the final report. The original report in IEEE format is available [here](https://github.com/00ber/business-recommender/blob/main/docs/report.pdf).**
+**⚠️This is a simplified Markdown version of the final report. The original report in IEEE format is available [here](https://github.com/00ber/business-recommender/blob/main/docs/report.pdf).**<br>
+The slides for the presentation can be found [here](https://00ber.github.io/business-recommender/#1).
 
 # Table of Contents
 - [Table of Contents](#table-of-contents)
